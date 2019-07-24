@@ -20,10 +20,12 @@ driver = webdriver.Chrome()
 driver.maximize_window()
 driver.get('http://www.baidu.com')
 
+# 隐形等待
 driver.implicitly_wait(100)
 
 driver.find_element_by_xpath('//div[@id="u1"]//a[@name="tj_login"]').click()
 
+# 显性等待
 # TANGRAM__PSP_10__footerULoginBtn:用户名登录的ID
 loc = (By.ID,'TANGRAM__PSP_10__footerULoginBtn')
 WebDriverWait(driver,5).until(EC.visibility_of_element_located(loc))
