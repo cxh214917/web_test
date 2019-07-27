@@ -60,7 +60,7 @@ wait.until(EC.visibility_of_element_located((By.XPATH,'//a[text()="帐号密码�
 driver.find_element_by_xpath('//a[text()="帐号密码登录"]').click()
 
 # driver.find_element_by_id("u").send_keys('2904504961')
-# driver.find_element_by_id("p").send_keys('**********')
+# driver.find_element_by_id("p").send_keys('*********')
 # driver.find_element_by_xpath('//input[@type="submit"]').click()
 
 
