@@ -19,6 +19,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 from web_class_20190726.file_upload import upload
+import os
 
 driver = webdriver.Chrome()
 driver.maximize_window()
@@ -102,8 +103,13 @@ loc = (By.XPATH,'//a[text()="0726-元素操作作业-同步上课代码+完成12
 wait.until(EC.visibility_of_element_located(loc))
 driver.find_element(*loc).click()
 
+
+BASE_PATH = os.path.dirname(__file__)
+HOMEWORK_PATH = os.path.join(BASE_PATH,'homework_20190726.py').replace('/','\\')
+FILE_UPLOAD_PATH = os.path.join(BASE_PATH,'file_upload.py').replace('/','\\')
+
 # 首次提交作业，后续操作终断也行
-# for i in [r"E:\web_test\web_class_20190726\file_upload.py",r"E:\web_test\web_class_20190726\homework_20190726.py"]:
+# for i in [HOMEWORK_PATH,FILE_UPLOAD_PATH]:
 #     loc = (By.XPATH, '//a[@class="sc-btn webuploader-container"]')
 #     wait.until(EC.visibility_of_element_located(loc))
 #     driver.find_element(*loc).click()
@@ -125,7 +131,7 @@ for i in range(2):
     wait.until(EC.visibility_of_element_located(loc))
     driver.find_element(*loc).click()
 
-for i in [r"E:\web_test\web_class_20190726\file_upload.py",r"E:\web_test\web_class_20190726\homework_20190726.py"]:
+for i in [HOMEWORK_PATH,FILE_UPLOAD_PATH]:
     loc = (By.XPATH, '//a[@class="sc-btn webuploader-container"]')
     wait.until(EC.visibility_of_element_located(loc))
     driver.find_element(*loc).click()
@@ -145,6 +151,6 @@ driver.find_element(*loc).click()
 time.sleep(3)
 driver.quit()
 
-# 不能使用os模块加载文件，路径中/ 和 \会报错
+
 
 
