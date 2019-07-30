@@ -150,7 +150,3 @@ driver.find_element(*loc).click()
 
 time.sleep(3)
 driver.quit()
-
-
-
-

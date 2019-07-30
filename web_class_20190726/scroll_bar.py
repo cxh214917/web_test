@@ -42,9 +42,11 @@ ele = driver.find_element(*loc)
 
 # 移动到元素element对象的“底端”与当前窗口的“底部”对齐
 # js = "arguments[0].scrollIntoView(false)"
+# driver.execute_script(js,ele)
 
 # 移动到元素element对象的“顶端”与当前窗口的“顶部”对齐--没意义
 # js = "arguments[0].scrollIntoView()"
+# driver.execute_script(js,ele)
 
 # 移动到页面底部
 # js = "window.scrollTo(0,document.body.scrollHeight)"
